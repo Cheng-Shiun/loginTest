@@ -26,5 +26,6 @@
         <h1>I'm Page A</h1>
         <a href="B.jsp">GO Page B</a>
         <a href="C.jsp">GO Page C</a>
+        <p>新增</p>
     </body>
 </html>
