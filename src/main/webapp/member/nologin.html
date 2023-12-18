@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>很抱歉，登入的帳號密碼有誤</h1>
+        <p>將導引您回到會員登入頁面</p>
+        <p id="countdown"></p>
+        <script>
+            //alert("三秒後重新載入")
+            function toLogin(){
+                location.href="/loginTest/login.jsp";
+            }
+            // 設定初始秒數 -> 3秒
+            var seconds = 3;
+
+            // 定義倒數的函數
+            function countdown() {
+                document.getElementById('countdown').textContent = seconds; // 更新顯示的秒數
+                // 如果還有剩餘秒數，繼續倒數
+                 if (seconds > 0) {
+                    setTimeout(countdown, 1000); // 1000毫秒(1秒)後再次呼叫countdown函數
+                    seconds--; // 減少秒數
+                 } else {
+                    setTimeout(toLogin, 0)  //setTimeout(function, milionsecond)
+                 }
+            }
+                // 執行函式 -> 開始倒數
+            countdown();
+           
+        </script>
+    </body>
+</html>
