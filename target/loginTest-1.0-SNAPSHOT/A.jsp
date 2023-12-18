@@ -27,5 +27,7 @@
         <a href="B.jsp">GO Page B</a>
         <a href="C.jsp">GO Page C</a>
         <p>新增</p>
+        <hr>
+        <h3>測試h3</h3>
     </body>
 </html>

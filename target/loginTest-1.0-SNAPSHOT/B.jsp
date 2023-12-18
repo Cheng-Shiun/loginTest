@@ -24,5 +24,6 @@
     <body>
         <h1>I'm Page B</h1>
         <a href="C.jsp">GO Page C</a>
+        <hr>
     </body>
 </html>
