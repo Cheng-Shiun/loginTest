@@ -23,7 +23,9 @@
     </head>
     <body>
         <h1>I'm Page C</h1>
-        <h3>使用者從哪個頁面連過來本頁面?(A/B)</h3>
-        <p>答案是：<%= request.getHeader("Referer") %></p>
+<!--        <h3>使用者從哪個頁面連過來本頁面?(A/B)</h3>
+        <p>答案是：<%= request.getHeader("Referer") %></p>-->
+        <h3>登入失敗</h3>
+        <p> <%= request.getAttribute("errmsg") %><p> <!--接收CheckLogin2失敗訊息-->
     </body>
 </html>

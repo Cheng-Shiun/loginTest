@@ -1,3 +1,8 @@
-com\mycompany\logintest\JakartaRestConfiguration.class
+com\mycompany\logintest\DBcongenerator.class
+com\mycompany\logintest\ProductModel.class
 com\mycompany\logintest\resources\JakartaEE8Resource.class
 NewServlet.class
+com\mycompany\logintest\CheckLogin.class
+com\mycompany\logintest\CheckLogin2.class
+com\mycompany\logintest\JakartaRestConfiguration.class
+com\mycompany\logintest\CartItem.class

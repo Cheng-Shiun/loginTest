@@ -4,13 +4,29 @@
         <servlet-name>NewServlet</servlet-name>
         <servlet-class>NewServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CheckLogin</servlet-name>
+        <servlet-class>com.mycompany.logintest.CheckLogin</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CheckLogin2</servlet-name>
+        <servlet-class>CheckLogin2</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>NewServlet</servlet-name>
         <url-pattern>/K1</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CheckLogin</servlet-name>
+        <url-pattern>/CheckLogin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CheckLogin2</servlet-name>
+        <url-pattern>/CheckLogin2</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
-            1
+            30
         </session-timeout>
     </session-config>
 </web-app>
