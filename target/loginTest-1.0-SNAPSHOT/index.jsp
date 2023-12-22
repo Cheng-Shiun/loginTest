@@ -13,10 +13,30 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
         <style>
-            a {
+            header {
+                background: darkslategray;
+                padding: 1rem;
+            }
+            header h1 {
+                color: white;
+            }
+            ul {
+                display: flex;
+            }
+            ul li {
+                margin-right: 1rem;
+                list-style-type: none;
+            }
+            ul li a {
                 display: block;
                 background: green;
                 color:white;
+                padding: 0.5rem;
+                text-decoration: none;
+            }
+            ul li a:hover {
+                color:green;
+                background: white;
             }
             span {
                 color:red;
@@ -60,10 +80,16 @@
         }
     %>
     <body>
-        <h1>首頁</h1>
-        <a style="text-decoration: none" href="login.jsp">會員登入</a>
-        <a style="text-decoration: none" href="productQuery.jsp">模型商品</a>
-        
+        <header>
+            <nav>
+                <h1>模型玩具店</h1>
+                 <ul>
+                    <li><a href="login.jsp">會員登入</a></li>
+                    <li><a href="productQuery.jsp">模型商品</a></li>
+                    <li><a href="ShoppingCartList.jsp">檢視購物車</a></li>
+                </ul>
+            </nav>
+        </header>
         <h3>request Header 介紹：</h3>
         <div>
             <!--因為requestHeader是Key-Value，需使用.getHeader(Key)來取得值-->

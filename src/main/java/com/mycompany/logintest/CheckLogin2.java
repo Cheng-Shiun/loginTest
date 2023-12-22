@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.sql.*;
 import javax.servlet.RequestDispatcher;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -25,6 +26,9 @@ public class CheckLogin2 extends HttpServlet {
     String username, passwd, sql;
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        //宣告session物件 -> 從Tomcat server請求session資料
+        HttpSession session = request.getSession();
+        String from;
         
         response.setContentType("text/html;charset=UTF-8");
         dbGen = new DBcongenerator();
@@ -42,11 +46,22 @@ public class CheckLogin2 extends HttpServlet {
             
             //輸出結果
             if(rs.next()){
-                //轉換頁面 -> 使用RequestDispatcher類別去調度請求頁面 (方法1:模擬瀏覽器網址GET)
-                //若頁面之間傳遞文字為非英文或特殊字元，必須預先編碼轉換為UTF-8才可傳送，否則會出現encode錯誤
-                System.out.println("編碼後的內容:" + java.net.URLEncoder.encode(message , "UTF-8"));
-                RequestDispatcher disp = request.getRequestDispatcher("parentPass.jsp?msg=" + java.net.URLEncoder.encode(message, "UTF-8"));
-                disp.forward(request, response);
+                //在程式內 發送 request 給其他頁面   request 派發
+                session.setAttribute("username", username);
+                Object o = session.getAttribute("from");
+                //假如沒登入 -> 取得Key="from"的值 ->(跳來登入頁面前的網址)
+                if(o != null){
+                    from = o.toString();
+                    response.sendRedirect(from);
+                }
+                else{
+                    //找不到from
+                    //轉換頁面 -> 使用RequestDispatcher類別去調度請求頁面 (方法1:模擬瀏覽器網址GET)
+                    //若頁面之間傳遞文字為非英文或特殊字元，必須預先編碼轉換為UTF-8才可傳送，否則會出現encode錯誤
+                    System.out.println("編碼後的內容:" + java.net.URLEncoder.encode(message , "UTF-8"));
+                    RequestDispatcher disp = request.getRequestDispatcher("parentPass.jsp?msg=" + java.net.URLEncoder.encode(message, "UTF-8"));
+                    disp.forward(request, response);
+                }
             }
             else{
                 //轉換登入失敗頁面(方法2:使用request 屬性(較簡單))

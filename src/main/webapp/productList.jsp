@@ -102,8 +102,11 @@
     
     %>
     <body>
+        <a href="ShoppingCartList.jsp">查詢購物車</a>
+        <a href="CheckOut.jsp">結帳</a>
         <h1>商品列表</h1>
         <h3>查詢類型: <%= request.getParameter("pl") %> </h3>
+        <h3>查詢的商品為: <%= productLine%></h3>
         <table>
             <tr>
               <th>商品編號</th>

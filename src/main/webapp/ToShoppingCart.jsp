@@ -41,10 +41,10 @@
       //如果沒有 -> 建立新的購物車後 把商品id、商品名、數量1放入
       if(shoppingCart.size() == 0){
            CartItem citem = new CartItem(pid, pname,1);
-           shoppingCart.add(citem);
+           shoppingCart.add(citem);    
        }
        else{
-            //檢查是否跟購物車內的商品id重複
+            //檢查是否跟購物車內的商品id重複 ->如果有，把購物車+1
             for(CartItem cti : shoppingCart){
                 if(cti.getProductCode().equals(pid)){
                     cti.setQty(cti.getQty()+1);
@@ -70,6 +70,7 @@
         %>
         您所購物的商品編號：<%= pid %><br>
         商品名稱：<%= pname %><br>
+        <a href="productList.jsp">返回商品列表</a>
         
     </body>
 </html>

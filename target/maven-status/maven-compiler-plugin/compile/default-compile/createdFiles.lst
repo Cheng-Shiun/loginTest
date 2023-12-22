@@ -5,4 +5,5 @@ NewServlet.class
 com\mycompany\logintest\CheckLogin.class
 com\mycompany\logintest\CheckLogin2.class
 com\mycompany\logintest\JakartaRestConfiguration.class
+com\mycompany\logintest\OrderProcess.class
 com\mycompany\logintest\CartItem.class

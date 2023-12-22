@@ -12,10 +12,12 @@
         <title>JSP Page</title>
     </head>
     <%!
-        HttpSession mySession;
+        HttpSession mySession; 
     %>
     <%
         mySession = request.getSession();
+        //將從瀏覽器記錄到的Referer網址(Value)放到 session，供CheckLogin2來轉換頁面用 (Key)-> "from"
+        session.setAttribute("from", request.getHeader("Referer"));
     %>
     <body>
         <form method="post" action="CheckLogin2">
